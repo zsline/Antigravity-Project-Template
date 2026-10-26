@@ -2,11 +2,16 @@
 .env
 .env.*
 !.env.example
+**/.env
+**/.env.*
+!**/.env.example
 
 # Operating system
 .DS_Store
 Thumbs.db
 Desktop.ini
+**/.DS_Store
+**/Thumbs.db
 
 # IDE and editor
 .idea/
@@ -15,11 +20,55 @@ Desktop.ini
 *.swo
 *~
 
-# Logs and temporary files
-*.log
-logs/
-tmp/
-temp/
+# Dependencies (Frontend, Node, PHP/Composer)
+node_modules/
+**/node_modules/
+vendor/
+**/vendor/
 
-# Local caches
+# Build artifacts and compiled assets
+dist/
+**/dist/
+build/
+**/build/
+.output/
+**/.output/
+
+# Laravel specific (temporary, caches, keys, storage)
+**/storage/*.key
+**/storage/oauth-*.key
+**/storage/framework/cache/*
+**/storage/framework/sessions/*
+**/storage/framework/views/*
+**/storage/framework/testing/*
+**/storage/logs/*
+!**/storage/framework/.gitkeep
+!**/storage/logs/.gitkeep
+
+# WordPress specific (local config, uploads, cache)
+**/wp-config-local.php
+**/wp-content/uploads/
+**/wp-content/upgrade/
+**/wp-content/cache/
+
+# Logs, debug and temporary files
+*.log
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+**/logs/
+tmp/
+**/tmp/
+temp/
+**/temp/
+
+# Local caches, testing and coverage
 .cache/
+**/.cache/
+.phpunit.result.cache
+**/.phpunit.result.cache
+coverage/
+**/coverage/
+
